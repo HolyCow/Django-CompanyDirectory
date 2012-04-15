@@ -1,0 +1,81 @@
+[
+   {
+      "model": "companydirectory.department",
+      "pk": 1,
+      "fields": {
+         "name": "Information Technology"
+      }
+   },
+   {
+      "model": "companydirectory.department",
+      "pk": 2,
+      "fields": {
+         "name": "Administration"
+      }
+   },
+   {
+      "model": "companydirectory.location",
+      "pk": 1,
+      "fields": {
+         "name": "Springfield, CA"
+      }
+   },
+   {
+      "model": "companydirectory.shift",
+      "pk": 1,
+      "fields": {
+         "name": "Day"
+      }
+   },
+   {
+      "model": "companydirectory.shift",
+      "pk": 2,
+      "fields": {
+         "name": "Night"
+      }
+   },
+   {
+      "model": "companydirectory.employee",
+      "pk": 3,
+      "fields": {
+         "firstname": "William",
+         "surname": "Lumberg",
+         "title": "Manager",
+         "department": 1,
+         "location": 1,
+         "extension": "234",
+         "shift": 1,
+         "email": "bill@initech.com"
+      }
+   },
+   {
+      "model": "companydirectory.employee",
+      "pk": 1,
+      "fields": {
+         "firstname": "Peter",
+         "surname": "Gibbens",
+         "title": "Developer",
+         "department": 1,
+         "location": 1,
+         "extension": "123",
+         "shift": 1,
+         "email": "pgibbens@initech.com",
+         "supervisor": 3
+      }
+   },
+   {
+      "model": "companydirectory.employee",
+      "pk": 2,
+      "fields": {
+         "firstname": "Michael",
+         "surname": "Bolton",
+         "title": "Systems Architect",
+         "department": 1,
+         "location": 1,
+         "extension": "234",
+         "shift": 1,
+         "email": "mbolton@initech.com",
+         "supervisor": 3
+      }
+   }
+]

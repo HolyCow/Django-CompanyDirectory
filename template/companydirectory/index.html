@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html land="en">
+   <head>
+      <title></title>
+      <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css" %}" />
+   </head>
+   
+   <body>
+      <div class="navbar navbar-fixed-top">
+         <div class="navbar-inner">
+            <div class="container">
+               <a href="{% url companydirectory.views.index %}">Home</a>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="span12">
+               <p>
+               {% if employees %}
+                  <table class="table table-bordered table-striped table-condensed">
+                        <tr>
+                           <th>Name</td>
+                           <th>Title</td>
+                           <th>Department</td>
+                           <th>Location</td>
+                           <th>Ext</td>
+                           <th>Shift</td>
+                           <th>Email</td>
+                           <th>Supervisor</td>
+                        </tr>
+                     {% for employee in employees %}
+                        <tr>
+                           <td>{{ employee.firstname }} {{ employee.surname }}</td>
+                           <td>{{ employee.title }}</td>
+                           <td>{{ employee.department }}</td>
+                           <td>{{ employee.location }}</td>
+                           <td>{{ employee.extension }}</td>
+                           <td>{{ employee.shift }}</td>
+                           <td><a href="mailto:{{ employee.email }}">{{ employee.email }}</a></td>
+                           <td>{{ employee.supervisor }}</td>
+                        </tr>
+                     {% endfor %}
+                  </table>
+               {% else %}
+                  No employees found.
+               {% endif %}
+               </p>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
+
+<!--
+   firstname = models.CharField(max_length=30)
+   surname = models.CharField(max_length=50)
+   title = models.CharField(max_length=100)
+   department = models.ForeignKey(Department)
+   location = models.ForeignKey(Location)
+   extension = models.CharField(max_length=10)
+   shift = models.ForeignKey(Shift)
+   email = models.EmailField(max_length=100)
+   supervisor = models.ForeignKey("self", blank=True, null=True)
+   create_date = models.DateField(default=datetime.now, editable=False)
+   modified_date = models.DateField(default=datetime.now, editable=False)
+-->

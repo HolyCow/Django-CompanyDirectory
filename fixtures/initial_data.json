@@ -14,6 +14,13 @@
       }
    },
    {
+      "model": "companydirectory.department",
+      "pk": 3,
+      "fields": {
+         "name": "Corporate Accounts Payable"
+      }
+   },
+   {
       "model": "companydirectory.location",
       "pk": 1,
       "fields": {
@@ -36,46 +43,74 @@
    },
    {
       "model": "companydirectory.employee",
-      "pk": 3,
+      "pk": 1,
       "fields": {
          "firstname": "William",
          "surname": "Lumberg",
          "title": "Manager",
          "department": 1,
          "location": 1,
-         "extension": "234",
+         "extension": "123",
          "shift": 1,
          "email": "bill@initech.com"
       }
    },
    {
       "model": "companydirectory.employee",
-      "pk": 1,
+      "pk": 2,
       "fields": {
          "firstname": "Peter",
          "surname": "Gibbens",
          "title": "Developer",
          "department": 1,
          "location": 1,
-         "extension": "123",
+         "extension": "234",
          "shift": 1,
          "email": "pgibbens@initech.com",
-         "supervisor": 3
+         "supervisor": 1
       }
    },
    {
       "model": "companydirectory.employee",
-      "pk": 2,
+      "pk": 3,
       "fields": {
          "firstname": "Michael",
          "surname": "Bolton",
          "title": "Systems Architect",
          "department": 1,
          "location": 1,
-         "extension": "234",
+         "extension": "345",
          "shift": 1,
          "email": "mbolton@initech.com",
-         "supervisor": 3
+         "supervisor": 1
+      }
+   },
+   {
+      "model": "companydirectory.employee",
+      "pk": 4,
+      "fields": {
+         "firstname": "Nina",
+         "surname": "Smith",
+         "title": "Customer Support",
+         "department": 3,
+         "location": 1,
+         "extension": "456",
+         "shift": 1,
+         "email": "nsmith@initech.com"
+      }
+   },
+   {
+      "model": "companydirectory.employee",
+      "pk": 5,
+      "fields": {
+         "firstname": "Samir",
+         "surname": "Nagheenanajar",
+         "title": "Network Printer Support",
+         "department": 1,
+         "location": 1,
+         "extension": "567",
+         "shift": 1,
+         "email": "snagheenanajar@initech.com"
       }
    }
 ]

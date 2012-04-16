@@ -13,7 +13,7 @@ from django.contrib import admin
    
 class EmployeeAdmin(admin.ModelAdmin):
    list_display = ('__unicode__', 'email', 'title', 'department', 'supervisor', 'create_date', 'modified_date')
-   list_filter = ['department', 'supervisor']
+   list_filter = ['department']
 
 class SettingAdmin(admin.ModelAdmin):
    list_display = ('name', '__unicode__')

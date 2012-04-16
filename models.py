@@ -36,5 +36,16 @@ class Employee(models.Model):
         self.modified = datetime.today()
         super(Employee, self).save(*args, **kwargs)
 
-
+class SettingName(models.Model):
+   name = models.CharField(max_length=30)
+   def __unicode__(self):
+      return self.name
+   
+class Setting(models.Model):
+   name = models.OneToOneField(SettingName)
+   setting = models.CharField(max_length=100)
+   def __unicode__(self):
+      return self.setting
+   
+   
 

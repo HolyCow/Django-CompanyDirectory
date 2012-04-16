@@ -2,15 +2,23 @@
 <!DOCTYPE html>
 <html land="en">
    <head>
-      <title></title>
+      <title>{{ sitename }}</title>
       <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.css" %}" />
+       <style>
+         body {
+           padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+         }
+       </style>
    </head>
    
    <body>
       <div class="navbar navbar-fixed-top">
          <div class="navbar-inner">
             <div class="container">
-               <a href="{% url companydirectory.views.index %}">Home</a>
+               <a class="brand" href="{% url companydirectory.views.index %}">{{ sitename }}</a>
+               <ul class="nav">
+                  <li><a href="/admin">Manage</a></li>
+               </ul>
             </div>
          </div>
       </div>
@@ -53,16 +61,4 @@
    </body>
 </html>
 
-<!--
-   firstname = models.CharField(max_length=30)
-   surname = models.CharField(max_length=50)
-   title = models.CharField(max_length=100)
-   department = models.ForeignKey(Department)
-   location = models.ForeignKey(Location)
-   extension = models.CharField(max_length=10)
-   shift = models.ForeignKey(Shift)
-   email = models.EmailField(max_length=100)
-   supervisor = models.ForeignKey("self", blank=True, null=True)
-   create_date = models.DateField(default=datetime.now, editable=False)
-   modified_date = models.DateField(default=datetime.now, editable=False)
--->
+

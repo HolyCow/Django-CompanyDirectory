@@ -1,4 +1,4 @@
-from companydirectory.models import Employee, Shift, Department, Location
+from companydirectory.models import Employee, Shift, Department, Location, Setting
 from django.contrib import admin
 
 #   title = models.CharField(max_length=100)
@@ -15,8 +15,12 @@ class EmployeeAdmin(admin.ModelAdmin):
    list_display = ('__unicode__', 'email', 'title', 'department', 'supervisor', 'create_date', 'modified_date')
    list_filter = ['department', 'supervisor']
 
+class SettingAdmin(admin.ModelAdmin):
+   list_display = ('name', '__unicode__')
+
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(Shift)
 admin.site.register(Department)
 admin.site.register(Location)
+admin.site.register(Setting, SettingAdmin)
 

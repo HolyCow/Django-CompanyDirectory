@@ -112,5 +112,20 @@
          "shift": 1,
          "email": "snagheenanajar@initech.com"
       }
+   },
+   {
+      "model": "companydirectory.settingname",
+      "pk": 1,
+      "fields": {
+         "name": "Site Name"
+      }
+   },
+   {
+      "model": "companydirectory.setting",
+      "pk": 1,
+      "fields": {
+         "name": 1,
+         "setting": "Example Site Name"
+      }
    }
 ]

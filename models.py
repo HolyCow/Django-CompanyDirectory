@@ -27,6 +27,7 @@ class Employee(models.Model):
    extension = models.CharField(max_length=10)
    shift = models.ForeignKey(Shift)
    email = models.EmailField(max_length=100)
+   is_supervisor = models.BooleanField(default=False)
    supervisor = models.ForeignKey("self", blank=True, null=True)
    create_date = models.DateField(default=datetime.now, editable=False)
    modified_date = models.DateField(default=datetime.now, editable=False)

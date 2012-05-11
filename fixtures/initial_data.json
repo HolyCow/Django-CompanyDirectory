@@ -52,7 +52,8 @@
          "location": 1,
          "extension": "123",
          "shift": 1,
-         "email": "bill@initech.com"
+         "email": "bill@initech.com",
+         "is_supervisor": "True"
       }
    },
    {

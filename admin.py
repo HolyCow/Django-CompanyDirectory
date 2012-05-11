@@ -14,6 +14,10 @@ from django.contrib import admin
 class EmployeeAdmin(admin.ModelAdmin):
    list_display = ('__unicode__', 'email', 'title', 'department', 'supervisor', 'create_date', 'modified_date')
    list_filter = ['department']
+   def formfield_for_foreignkey(self, db_field, request, **kwargs):
+      if db_field.name == "supervisor":
+         kwargs["queryset"] = Employee.objects.filter(is_supervisor=True)
+      return super(EmployeeAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
 class SettingAdmin(admin.ModelAdmin):
    list_display = ('name', '__unicode__')
